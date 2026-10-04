@@ -1,0 +1,29 @@
+# TARGET STRUCTURE:
+
+casio-offline/                          <- repo root
+├── reference/
+│   └── 991 series emulation.html     <- previous working single-file build (OLD engine)
+├── engine/
+│   ├── simworker.js                    <- simulator worker, minified, version "v1.1.6"
+│   ├── simlib.js                       <- emscripten loader
+│   ├── comlink.js                      <- Comlink (global "Comlink")
+│   └── simlib.wasm                     <- engine wasm
+├── models/
+│   ├── FY505/  core.dat + keylog.json + face.svg     <- fx-9910CW
+│   ├── EY005/  core.dat + keylog.json + face.svg     <- fx-991CW
+│   └── CY234/  core.dat + keylog.json + face.svg     <- fx-991EX
+└── OUTPUT= 991 classwiz emulator.html                           
+
+FILE MAPPING (accept either naming convention):
+
+| Uploaded name              | Target path                | Model     | Model ID |
+|----------------------------|----------------------------|-----------|----------|
+| core.dat / core.dat        | models/FY505/core.dat      | fx-9910CW | FY505    |
+| keylog.json / keylog.json  | models/FY505/keylog.json   | fx-9910CW | FY505    |
+| face.svg / face.svg        | models/FY505/face.svg      | fx-9910CW | FY505    |
+| core.dat (1)               | models/EY005/core.dat      | fx-991CW  | EY005    |
+| keylog.json (1)            | models/EY005/keylog.json   | fx-991CW  | EY005    |
+| face.svg (1)               | models/EY005/face.svg      | fx-991CW  | EY005    |
+| core.dat (2)               | models/CY234/core.dat      | fx-991EX  | CY234    |
+| keylog.json (2)            | models/CY234/keylog.json   | fx-991EX  | CY234    |
+| face.svg (2)               | models/CY234/face.svg      | fx-991EX  | CY234    |
